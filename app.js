@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
         method: 'get',
         url: `http://api.qubitro.com/v1/projects/${process.env.PROJECT_ID}/devices/${process.env.DEVICE_ID}/data?keys=LAT,LNG&period=1&limit=1`,
         headers: { 
-          'Authorization': process.env.AUTHORIZATION
+          'Authorization': `Bearer-${process.env.AUTHORIZATION}`
         }
     }
     axios(config)
